@@ -37,7 +37,7 @@ public class UserController {
     public ResponseEntity<User> getUser(@PathVariable Long id){
 
         /*Optional<User> user = userService.fetchUser(id);
-        if(user.isEmpty())
+        if(user.isEmpty()) sample
             return ResponseEntity.notFound().build();
         return ResponseEntity.ok(userService.fetchUser(id));*/
 
