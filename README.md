@@ -21,3 +21,18 @@ git push -u origin main
 // git push uploads your local commits to the remote repository.
 // The -u flag sets the remote origin as the upstream branch. This allows you to use git push and git pull without specifying the remote and branch name in the future.
 // The default branch name may be main or master depending on your setup; use the correct name. 
+
+
+git checkout -b <branch-name>
+
+git status  
+-- to get the chnged files
+
+git add .
+
+git commit -m "testbranch changes commit to local"
+
+git push --set-upstream origin testbranch
+
+remote: Create a pull request for 'testbranch' on GitHub by visiting:
+remote:      https://github.com/shbrkp/ecom-application/pull/new/testbranch
