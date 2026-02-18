@@ -37,7 +37,7 @@ public class UserController {
     public ResponseEntity<User> getUser(@PathVariable Long id){
 
         /*Optional<User> user = userService.fetchUser(id);
-        if(user.isEmpty()) sample
+        if(user.isEmpty()) sample changes in new branch
             return ResponseEntity.notFound().build();
         return ResponseEntity.ok(userService.fetchUser(id));*/
 
