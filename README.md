@@ -22,7 +22,8 @@ git push -u origin main
 // The -u flag sets the remote origin as the upstream branch. This allows you to use git push and git pull without specifying the remote and branch name in the future.
 // The default branch name may be main or master depending on your setup; use the correct name. 
 
-
+For doing new work
+Step 1:
 git checkout -b <branch-name>
 
 git status  
