@@ -1,5 +1,7 @@
 package com.app.ecom.controller;
 
+import com.app.ecom.dto.UserRequest;
+import com.app.ecom.dto.UserResponse;
 import com.app.ecom.model.User;
 import com.app.ecom.service.UserService;
 import lombok.AllArgsConstructor;
@@ -8,16 +10,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
 public class UserController {
     private final UserService userService;
-    private List<User> userList = new ArrayList<>();
+    private List<UserResponse> userList = new ArrayList<>();
 
     @GetMapping("/api/users")
-    public ResponseEntity<List<User>> getAllUsers()
+    public ResponseEntity<List<UserResponse>> getAllUsers()
     {
         System.out.println("getAllUsers");
         userList = userService.getAllusers();
@@ -28,13 +29,13 @@ public class UserController {
     }
 
     @PostMapping("/api/users")
-    public ResponseEntity<String> createUser(@RequestBody User user){
-        userService.adduser(user);
+    public ResponseEntity<String> createUser(@RequestBody UserRequest userRequest){
+        userService.adduser(userRequest);
         return ResponseEntity.ok("User added successfully");
     }
 
    @GetMapping("/api/users/{id}")
-    public ResponseEntity<User> getUser(@PathVariable Long id){
+    public ResponseEntity<UserResponse> getUser(@PathVariable Long id){
 
         /*Optional<User> user = userService.fetchUser(id);
         if(user.isEmpty()) sample changes in new branch
@@ -49,10 +50,10 @@ public class UserController {
     }
 
     @PutMapping("/api/users/{id}")
-    public ResponseEntity<String> updateUser(@RequestBody User updatedUser,
+    public ResponseEntity<String> updateUser(@RequestBody UserRequest updatedUserrequest,
                                              @PathVariable Long id){
-        System.out.println("updatedUser----"+updatedUser.getFirstName());
-        boolean updatedUserBool = userService.updateUser(updatedUser,id);
+        System.out.println("updatedUser----"+updatedUserrequest.getFirstName());
+        boolean updatedUserBool = userService.updateUser(updatedUserrequest,id);
         System.out.println("updatedUserBool----"+updatedUserBool);
         if(updatedUserBool)
             return ResponseEntity.ok("User updated successfully");
