@@ -37,3 +37,8 @@ git push --set-upstream origin testbranch
 
 remote: Create a pull request for 'testbranch' on GitHub by visiting:
 remote:      https://github.com/shbrkp/ecom-application/pull/new/testbranch
+
+
+Actuator (changes reflected in properties and xml)
+info :  http://localhost:8080/actuator/info
+Shutdown : http://localhost:8080/actuator/info
