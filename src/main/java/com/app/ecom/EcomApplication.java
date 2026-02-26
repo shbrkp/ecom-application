@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EcomApplication {
 
 	public static void main(String[] args) {
+
+		System.out.println("JVM Timezone: " + java.util.TimeZone.getDefault());
 		SpringApplication.run(EcomApplication.class, args);
+
 	}
 
 }
